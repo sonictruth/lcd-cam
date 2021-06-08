@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Cam</title>
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body{
+      background-color: gray;
+    }
+    #message {
+      text-align: center;
+    }
+    video {
+      display: none;
+    }
+    canvas {
+      width: 600px;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="message">
+    <button id="start">Start</button>
+    <div>
+    <canvas width="800" height="600"></canvas>
+    <video  autoplay="true" width="800" height="600"></video>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var cachebuster = Math.round(new Date().getTime() / 1000);
+    document.write('<scr'+'ipt type="text/javascript" src="app.min.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+   </script>
+    
+</body>
+
+</html>
