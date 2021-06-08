@@ -14,7 +14,7 @@ const height = 8;
 canvas.width = width;
 canvas.height = height
 
-let lcd = new Array(height).fill(0).map(() =>
+let leds = new Array(height).fill(0).map(() =>
     new Array(width).fill(0));
 
 function reloadPage() {
@@ -41,12 +41,12 @@ function handleSuccess(stream) {
                 const r = image.data[idx];
                 const g = image.data[idx + 1];
                 const b = image.data[idx + 2];
-                // LCD is HxW BGR
-                lcd[y][x] = (b << 16) | (g << 8) | (r << 0);
+                // LED Matrix is HxW BGR
+                leds[y][x] = (b << 16) | (g << 8) | (r << 0);
                
             }
         }
-        socket.send(JSON.stringify(lcd));
+        socket.send(JSON.stringify(leds));
         timeoutId = setTimeout(loop, 100);
     }
     loop();
