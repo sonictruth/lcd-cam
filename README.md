@@ -1,5 +1,3 @@
 # led-cam
 
-Stream video from browser to a ws2812 led matrix controlled by a Raspberry PI
-
-
+Stream video from your browser to a ws2812 LED matrix controlled by a Raspberry PI.
